@@ -1,5 +1,5 @@
-Here you can say lots of fun things about your site.
+Hi, this is my personal blog which will include recordings of research, projects and learning.
 
-Maybe say a some things about yourself.
+Main content of the blog posts are going to be data science / analytics / engineering, music information retrieval (MIR) and machine learining.
 
-Or maybe what you plan to blog about.
+I aim to upload at least one post a week, starting from 02/12/25.
