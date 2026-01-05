@@ -37,7 +37,7 @@ Time-frequency representation
 
 <br>
 
-### Vocals
+### Vocals VS Instruments
 
 
 ![spectrogram-pic-1_orig](https://github.com/user-attachments/assets/6a83fe31-f998-493c-86a1-a7a386343a6e)
@@ -50,15 +50,12 @@ Time-frequency representation
 
 This vocal line has vibrato, represented by the waves whereas piano has no vibrato.
 
-<br>
-
-### instruments
 
 
 
 <br>
 
-### seperating vocals using AI (machine learning)
+### how seperating vocals using AI works (machine learning)
 
 <br>
 
