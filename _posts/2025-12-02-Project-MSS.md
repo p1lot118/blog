@@ -83,18 +83,62 @@ The vocals are simply the target object which the AI needs to segment out of the
 
 **Main job**
 
+> In a nut shell,
+> **The Left Side (Down)**: You keep shrinking and "squinting" until you have a tiny, dense summary of what instruments are in the song (the "Bottleneck").
+
+> **The Right Side (Up)**: You take that tiny summary and try to "blow it back up" into a full-sized image, using your knowledge to draw a clean line around just the vocals.
+
 <br>
 
 1. **Downsampling** (compression) - takes the original spectogram and progressively shrinks it through layers of convolutions.
 
+first, 
+<br>
+**convolution** (pattern detection) : AI uses tiny filter of 3x3 or 5x5 pixel grid to view the spectrogram part by part.
+<br>
+- It first slides across the spectrogram like a magnifying glasses moving line by line.
+- At every stop, it multiplies the numbers in the filter (larger magnifiying glasses)
+
+> What are the "numbers" in the image? -> In an audio spectrogram, the "image" is just a massive grid of pixels. Each pixel’s number represents Amplitude (volume).
+
+> 0.0: Absolute silence at that specific pitch and time.
+
+> 1.0: The loudest possible sound at that pitch and time.
+
+> Everything in between: A decimal (like 0.45) representing how much energy is there.
+
+> The Filter (or Kernel) is also a tiny grid of numbers (weights). These numbers are learned by the AI during training to recognize patterns like "a human voice" or "a snare drum hit."
 
 <br>
 
-2. **Feature Extraction** - as it shrinks the "image"
+**after the convolution finds the patterns**, the AI needs to make the image smaller to focus on the "big picture". This is usually done with **Max Pooling**.
+<br>
+**Max pooling**
+> it divides the image into 2x2 square, then looks at the four pixels in that square and only keeps the largest number (strongest evidence of an instrument existing there)
+
+<br>
+This makes the image'e height and width being cut in half. if you repeat this 4 or 5 times, then a massive song file will shrink down to a tiny feature map with only strong evidence left (16x16 pixels wide).
+<br>
+
+**but why do we need to shrink?**
+
+<br>
+because having "full resolution of the spectrogram" would distract us through tiny details like background noises and statics. 
+
 
 <br>
 
-##### Decoder (the reconstructor)
+2. **Feature Extraction** - as it shrinks the "image" -> basically bastracts features.
+
+For example, the model would be like **"This squiggly line at this frequency range, combined with that ryhthmic burst, is highly likely to be a voice"** or **"These consistent horizontal lines at the bottom are the baseline"**
+
+<br>
+
+This part converts the visual data into a compressed, conceptual summary.
+
+<br>
+
+##### Decoder (the reconstructor - rebuilding the separated ouput)
 
 > It abstract knowledge from the encoder to build the final, separated output.
 
