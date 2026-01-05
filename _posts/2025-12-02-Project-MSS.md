@@ -84,6 +84,7 @@ The vocals are simply the target object which the AI needs to segment out of the
 **Main job**
 
 > In a nut shell,
+
 > **The Left Side (Down)**: You keep shrinking and "squinting" until you have a tiny, dense summary of what instruments are in the song (the "Bottleneck").
 
 > **The Right Side (Up)**: You take that tiny summary and try to "blow it back up" into a full-sized image, using your knowledge to draw a clean line around just the vocals.
