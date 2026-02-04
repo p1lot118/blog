@@ -4,8 +4,6 @@ The goal of this project is to build a system that scrapes job boards daily, sto
 
 # Structured Roadmap (Phased Approach)
 
-<br>
-
 ## Phase 1: Automated Ingestion
 * Tooling: Python (Scrapy or Selenium), GitHub Actions.
 * Task: Build a scraper that targets 1–2 job boards (e.g., Indeed, LinkedIn, or niche tech boards like WeWorkRemotely).
