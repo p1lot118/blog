@@ -1,4 +1,4 @@
-# [WhatjobAI] Phase 2 - Data engineering & storage
+# [WhatjobAI] Phase 2 - Data engineering & Storage
 
 ## Designing Relational Database (SQL)
 
