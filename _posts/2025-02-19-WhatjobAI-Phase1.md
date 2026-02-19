@@ -1,5 +1,7 @@
 
-# [WhatjobAI] Phase 1 - Building Web Scaper
+# [WhatjobAI] Phase 1 - Automatic Ingestion
+
+## Building Web Scaper
 
 In this phase i will be designing a web scraper that will:
 
